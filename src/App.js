@@ -10,6 +10,7 @@ function App() {
       <div onClick={() => setboool(!boool)}>
         <h1>changeBoool</h1>
       </div>
+      {/* Load in the Navbar from Navbar.js */}
       <Navbar/>
     </div>
   );
