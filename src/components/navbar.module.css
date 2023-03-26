@@ -1,3 +1,19 @@
 .navbar {
-    background-color: blue;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to right, hsl(230, 70%, 8%), hsl(280, 70%, 10%));
+    color: white;
+    font-size: 2rem;
+    padding: 4px 8px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    cursor: pointer;
+    transition-duration: 300ms;
+}
+
+.navbar:hover {
+    color: aquamarine;
 }

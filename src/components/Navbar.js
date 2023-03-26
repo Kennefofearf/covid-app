@@ -3,9 +3,9 @@ import styles from './navbar.module.css'
 import { useFetchData } from "../hooks/fetchData";
 
 export default function Navbar(props) {
+  const {selected, setSelected} = props
   const countriesUrl = 'https://covid-api.mmediagroup.fr/v1/cases'
   const { data, loading, error } = useFetchData(countriesUrl)
-  console.log(data, loading, error)
 
   if (error) {
     return <div>
@@ -14,10 +14,10 @@ export default function Navbar(props) {
   }
 
   return (
-    <div>
+    <div className='styles.navbar'>
       {loading ?
       <div>Loading</div> :
-      <div>data</div>
+      <div>{selected}</div>
       }
     </div>
   )
