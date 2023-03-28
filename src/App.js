@@ -20,9 +20,9 @@ function App() {
       
       {!loading && <main className="Main">
         {open ?
-      <Dropdown data={data} setSelected={setSelected} /> :
+      <Dropdown data={data} setSelected={setSelected} setOpen={ setOpen } /> :
 
-      <Main />
+      <Main selected={selected} />
         }
       </main>}
     </div>

@@ -20,7 +20,7 @@ export default function Navbar(props) {
     <div className={styles.navbar} onClick={() => setOpen(!open)}>
       {loading ?
       <div>Loading</div> :
-      <div>{selected}</div>
+      <div className={styles.subText}>{selected}</div>
       }
       <i style={{transform: `${open ? 'rotate(180deg)' : ''}`, transitionDuration: '300ms'}} className="fa-solid fa-chevron-down"></i>
     </div>

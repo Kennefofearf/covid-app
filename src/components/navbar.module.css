@@ -12,6 +12,13 @@
     user-select: none;
     cursor: pointer;
     transition-duration: 300ms;
+    z-index: 20;
+}
+
+.subText {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .navbar:hover {
