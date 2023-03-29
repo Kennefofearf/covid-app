@@ -8,7 +8,7 @@ import { useFetchData } from "./hooks/fetchData";
 function App() {
   const [selected, setSelected] = useState('Global')
   const [open, setOpen] = useState(false)
-  const countriesUrl = 'https://covid-api.com/api/regions?per_page=1002'
+  const countriesUrl = 'https://covid-api.com/api/regions?per_page=1000'
   const { data, loading, error } = useFetchData(countriesUrl)
 
   
