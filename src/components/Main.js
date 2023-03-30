@@ -1,10 +1,11 @@
 import React from 'react'
 import { useFetchData } from '../hooks/fetchData'
+import Dropdown from './Dropdown'
 
 export default function Main(props) {
     const { selected } = props
     const url = 'https://covid-api.com/api/reports/total?date=2020-03-14&iiso=USA'
-    const selectedRegion = {selected}
+    const selectedRegion = { selected }
     const date = new Date()
     let year = date.getFullYear()
     let month = ('0' + (date.getMonth() + 1)).slice(-2)
