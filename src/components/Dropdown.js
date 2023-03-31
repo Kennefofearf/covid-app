@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from './dropdown.module.css'
 
+export var iso
+
 export default function Dropdown(props) {
     const { data, setSelected, setOpen } = props
     const regions = data.data.map(region => region.name)
@@ -11,7 +13,7 @@ export default function Dropdown(props) {
             return <div key={index} className={styles.dropdownItem} 
             onClick={() => {
                 setSelected(regionName)
-                var iso = (data.data[index - 1].iso)
+                iso = data.data[index -1].iso
                 setOpen(false)
                 }} >
                 {regionName}

@@ -1,11 +1,12 @@
 import React from 'react'
 import { useFetchData } from '../hooks/fetchData'
 import Dropdown from './Dropdown'
+import { iso } from './Dropdown'
 
 export default function Main(props) {
     const { selected } = props
     const url = 'https://covid-api.com/api/reports/total?date=2020-03-14&iiso=USA'
-    const selectedRegion = { selected }
+    const selectedRegion = iso
     const date = new Date()
     let year = date.getFullYear()
     let month = ('0' + (date.getMonth() + 1)).slice(-2)
@@ -17,7 +18,7 @@ export default function Main(props) {
     // const cases = data.data.confirmed
 
     if (selected === 'Global') {
-        //selectedRegion = 'USA'
+        // selectedRegion = 'USA'
         return <div>
             Globobble
         </div>
