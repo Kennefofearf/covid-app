@@ -12,12 +12,12 @@ export default function Main(props) {
     let month = ('0' + (date.getMonth() + 1 - 1)).slice(-2)
     var day = ('0' + (date.getDate())).slice(-2)
     if (month == '02' && day > 28) {
-        day = ('0' + (date.getDate() - 2)).slice(-2)
+        day = 28
     }
     const new_Url = `https://covid-api.com/api/reports/total?date=${year}-${month}-${day}&iso=${selectedRegion}`
     const { data, loading, error } = useFetchData(new_Url)
-    // const deaths = data.deaths
-    // const cases = data.confirmed
+    // const deaths = data.data.map(death => death.deaths)
+    // const cases = data.data.map(confirmed => confirmed.confirmed)
     console.log(data)
 
     if (selected === 'Global') {
