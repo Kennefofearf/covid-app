@@ -6,7 +6,7 @@ import { iso } from './Dropdown'
 export default function Main(props) {
     const { selected } = props
     const url = 'https://covid-api.com/api/reports/total?date=2020-03-14&iiso=USA'
-    const selectedRegion = iso
+    var selectedISO = iso
     const date = new Date()
     let year = date.getFullYear()
     let month = ('0' + (date.getMonth() + 1 - 1)).slice(-2)
@@ -14,17 +14,20 @@ export default function Main(props) {
     if (month == '02' && day > 28) {
         day = 28
     }
-    const new_Url = `https://covid-api.com/api/reports/total?date=${year}-${month}-${day}&iso=${selectedRegion}`
+    const new_Url = `https://covid-api.com/api/reports/total?date=${year}-${month}-${day}&iso=${selectedISO}`
     const { data, loading, error } = useFetchData(new_Url)
-    // const deaths = data.data.map(death => death.deaths)
+    var deaths
     // const cases = data.data.map(confirmed => confirmed.confirmed)
-    console.log(data)
 
     if (selected === 'Global') {
-        //selectedRegion = 'USA'
+        selectedISO = 'USA'
         return <div>
             Globobble
         </div>
+    } if (selected !== 'Global') {
+      console.log(new_Url)
+    } else {
+      
     }
   return (
     <div>Main</div>
