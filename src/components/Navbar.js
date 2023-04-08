@@ -7,9 +7,7 @@ export default function Navbar(props) {
     open, 
     setOpen,
     loading,
-    error,
-    newLoading,
-    newError
+    error
   } = props
 
   if (error) {

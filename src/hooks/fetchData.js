@@ -1,28 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-
-export function useFetchNewData(url) {
-    const [newData, setNewData] = useState(null)
-    const [newLoading, setNewLoading] = useState(true)
-    const [newError, setNewError] = useState(null)
-
-    useEffect(() => {
-        setNewLoading(true)
-        async function fetch() {
-            try {
-                const {newData} = await axios.get(url)
-                setNewData(newData)
-            } catch (err) {
-                setNewError(err.message)
-            } finally {
-                setNewLoading(false)
-            }
-        }
-        fetch()
-    }, [url])
-
-  return {newData, newLoading, newError}
-}
+import { fetchNow } from '../components/Main'
 
 export function useFetchData(url) {
     const [data, setData] = useState(null)
@@ -45,4 +23,30 @@ export function useFetchData(url) {
     }, [url])
 
   return {data, loading, error}
+}
+
+export function useFetchNewData(url) {
+    const [newData, setNewData] = useState(null)
+    const [newLoading, setNewLoading] = useState(true)
+    const [newError, setNewError] = useState(null)
+    
+    useEffect(() => {
+        if (fetchNow === true) {
+        setNewLoading(true)
+        function fetch() {
+            try {
+                const {newData} = axios.get(url)
+                setNewData(newData)
+            } catch (err) {
+                setNewError(err.message)
+            } finally {
+                setNewLoading(false)
+            }
+        }
+        console.log("Fetching now from " + url)
+        fetch()
+        console.log("Fetched...")
+    }}, [url])
+
+  return {newData, newLoading, newError}
 }

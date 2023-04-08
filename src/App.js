@@ -20,10 +20,9 @@ function App() {
     if (month == '02' && day > 28) {
         day = 28
     }
+  const old_Url = 'https://covid-api.com/api/reports/total?date=2020-03-14&iiso=USA'
   const new_Url = `https://covid-api.com/api/reports/total?date=${year}-${month}-${day}&iso=${selectedISO}`
   const { newData, newLoading, newError } = useFetchNewData(new_Url)
-  console.log(new_Url)
-
 
   
   return (

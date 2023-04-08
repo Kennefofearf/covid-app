@@ -1,7 +1,9 @@
 import React from 'react'
-// import { useFetchNewData } from '../hooks/fetchData'
+import { useFetchNewData } from '../hooks/fetchData'
 // import Dropdown from './Dropdown'
 // import { iso } from './Dropdown'
+
+export var fetchNow = false;
 
 export default function Main(props) {
     const { selected, newData } = props
@@ -18,16 +20,17 @@ export default function Main(props) {
     // const cases = data.data.map(confirmed => confirmed.confirmed)
 
     if (selected === 'Global') {
-        //selectedISO = 'USA'
         return <div>
             Globobble
+            {fetchNow = false}
         </div>
-    } if (selected !== 'Global') {
-      console.log(newData)
-    } else {
-      
     }
   return (
-    <div>Main</div>
+    <div>
+      {fetchNow = true}
+      {console.log(fetchNow)}
+      {console.log("Data fetched...")}
+      {console.log(newData)}
+    </div>
   )
 }
