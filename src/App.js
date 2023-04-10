@@ -14,14 +14,13 @@ function App() {
   var selectedISO = iso
   const date = new Date()
   let year = date.getFullYear()
-  let month = ('0' + (date.getMonth() + 1 - 1)).slice(-2)
+  let month = ('0' + (date.getMonth() + 1 - 2)).slice(-2)
   var day = ('0' + (date.getDate())).slice(-2)
     if (month == '02' && day > 28) {
         day = 28
     }
   const old_Url = 'https://covid-api.com/api/reports/total?date=2020-03-14&iiso=USA'
   const new_Url = `https://covid-api.com/api/reports/total?date=${year}-${month}-${day}&iso=${selectedISO}`
-
   
   return (
     <div className="App">
@@ -33,7 +32,7 @@ function App() {
         {open ?
       <Dropdown data={data} setSelected={setSelected} setOpen={ setOpen } /> :
 
-      <Main selected={selected} data={data} new_Url={new_Url} />
+      <Main selected={selected} data={data} new_Url={new_Url} loading={loading} />
         }
       </main>}
     </div>

@@ -6,6 +6,7 @@ export var iso
 export default function Dropdown(props) {
     const { data, setSelected, setOpen } = props
     const regions = data.data.map(region => region.name)
+    console.log(data)
 
   return (
     <div className={styles.dropdown}>
