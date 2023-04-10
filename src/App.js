@@ -4,7 +4,6 @@ import './index.css'
 import Dropdown from "./components/Dropdown";
 import Main from "./components/Main";
 import { useFetchData } from "./hooks/fetchData";
-import { useFetchNewData } from "./hooks/fetchData";
 import { iso } from "./components/Dropdown";
 
 function App() {
@@ -22,20 +21,19 @@ function App() {
     }
   const old_Url = 'https://covid-api.com/api/reports/total?date=2020-03-14&iiso=USA'
   const new_Url = `https://covid-api.com/api/reports/total?date=${year}-${month}-${day}&iso=${selectedISO}`
-  const { newData, newLoading, newError } = useFetchNewData(new_Url)
 
   
   return (
     <div className="App">
       <Navbar selected={selected} setSelected={setSelected}  
       open={open} setOpen={setOpen} data={data} loading={loading} 
-      error={error} newLoading={newLoading} newError={newError}/>
+      error={error} />
       
       {!loading && <main className="Main">
         {open ?
       <Dropdown data={data} setSelected={setSelected} setOpen={ setOpen } /> :
 
-      <Main selected={selected} newData={newData} />
+      <Main selected={selected} data={data} new_Url={new_Url} />
         }
       </main>}
     </div>

@@ -12,8 +12,6 @@ export default function Dropdown(props) {
         {['Global', ...regions].map((regionName, index) => {
             return <div key={index} className={styles.dropdownItem} 
             onClick={() => {
-              console.log("Data fetched...")
-              console.log(data)
                 setSelected(regionName)
                 iso = data.data[index -1].iso
                 setOpen(false)

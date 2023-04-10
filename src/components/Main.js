@@ -1,36 +1,21 @@
 import React from 'react'
-import { useFetchNewData } from '../hooks/fetchData'
-// import Dropdown from './Dropdown'
-// import { iso } from './Dropdown'
-
-export var fetchNow = false;
+import { useFetchData } from '../hooks/fetchData'
 
 export default function Main(props) {
-    const { selected, newData } = props
-    //const url = 'https://covid-api.com/api/reports/total?date=2020-03-14&iiso=USA'
-    // var selectedISO = iso
-    // const date = new Date()
-    // let year = date.getFullYear()
-    // let month = ('0' + (date.getMonth() + 1 - 1)).slice(-2)
-    // var day = ('0' + (date.getDate())).slice(-2)
-    // if (month == '02' && day > 28) {
-    //     day = 28
-    // }
-    // const new_Url = `https://covid-api.com/api/reports/total?date=${year}-${month}-${day}&iso=${selectedISO}`
-    // const cases = data.data.map(confirmed => confirmed.confirmed)
+    var { selected, data, new_Url } = props
 
     if (selected === 'Global') {
         return <div>
             Globobble
-            {fetchNow = false}
         </div>
-    }
+    } else if (selected !== 'Global') {
+      data = useFetchData(new_Url)
+      var deaths = data
+      console.log(deaths)
   return (
     <div>
-      {fetchNow = true}
-      {console.log(fetchNow)}
-      {console.log("Data fetched...")}
-      {console.log(newData)}
+
     </div>
   )
+    }
 }
