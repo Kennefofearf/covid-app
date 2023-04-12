@@ -8,11 +8,16 @@ export default function Main(props) {
         return <div>
             Globobble
         </div>
-    } else if (selected !== 'Global') {
-      data = useFetchData(new_Url)
-      console.log(new_Url)
-      var deaths = data
-      console.log(deaths)
+    } else {
+      // data = useFetchData(new_Url)
+      // console.log(data)
+      // {data.data != null
+      // {!loading
+      // console.log(new_Url)
+      // var deaths = data
+      // console.log(deaths)
+      // }
+      // }
   return (
     <div>
       
