@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './dropdown.module.css'
+import { flag } from './Navbar'
 
 const date = new Date()
 let year = date.getFullYear()
@@ -14,6 +15,10 @@ var regions
 
 export default function Dropdown(props) {
     const { data, setSelected, setOpen } = props
+
+    if (flag === true) {
+      url = 'https://covid-api.com/api/regions?per_page=1000'
+    }
 
     if (url === 'https://covid-api.com/api/regions?per_page=1000') {
       regions = data.data.map(region => region.name)

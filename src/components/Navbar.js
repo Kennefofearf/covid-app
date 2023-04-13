@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import styles from './navbar.module.css'
 
+export var flag = true
+
 export default function Navbar(props) {
   const {
     selected, 
     open, 
     setOpen,
     loading,
-    error,
+    error
   } = props
 
   if (error) {
@@ -17,7 +19,10 @@ export default function Navbar(props) {
   }
 
   return (
-    <div className={styles.navbar} onClick={() => setOpen(!open)}>
+    <div className={styles.navbar} onClick={() => {
+      setOpen(!open)
+      flag = true
+    }}>
       {loading ?
       <div>Loading</div> :
       <div className={styles.subText}>{selected}</div>
