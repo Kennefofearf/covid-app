@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styles from './navbar.module.css'
-
-export var flag = true
+import { url } from './Dropdown'
 
 export default function Navbar(props) {
   const {
@@ -19,10 +18,8 @@ export default function Navbar(props) {
   }
 
   return (
-    <div className={styles.navbar} onClick={() => {
-      setOpen(!open)
-      flag = true
-    }}>
+    <div className={styles.navbar} onClick={() => setOpen(!open)}>
+      {console.log(url)}
       {loading ?
       <div>Loading</div> :
       <div className={styles.subText}>{selected}</div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './dropdown.module.css'
-import { flag } from './Navbar'
+import Navbar from './Navbar'
+import { setOpen } from './Navbar'
 
 const date = new Date()
 let year = date.getFullYear()
@@ -12,11 +13,12 @@ var day = ('0' + (date.getDate())).slice(-2)
 export var url = 'https://covid-api.com/api/regions?per_page=1000'
 export var iso
 var regions
+var flag
 
 export default function Dropdown(props) {
     const { data, setSelected, setOpen } = props
 
-    if (flag === true) {
+    if (Navbar(setOpen)) {
       url = 'https://covid-api.com/api/regions?per_page=1000'
     }
 
@@ -34,6 +36,7 @@ export default function Dropdown(props) {
                 setOpen(false)
                 iso = data.data[index -1].iso
                 url = `https://covid-api.com/api/reports/total?date=${year}-${month}-${day}&iso=${iso}`
+                console.log(url) 
                 }} >
                 {regionName}
             </div>
