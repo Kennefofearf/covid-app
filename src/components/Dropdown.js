@@ -13,19 +13,19 @@ var day = ('0' + (date.getDate())).slice(-2)
 export var url = 'https://covid-api.com/api/regions?per_page=1000'
 export var iso
 var regions
-var flag
+var toggle = false
+var dataSaver
 
 export default function Dropdown(props) {
     const { data, setSelected, setOpen } = props
 
-    if (Navbar(setOpen)) {
-      url = 'https://covid-api.com/api/regions?per_page=1000'
-    }
-
-    if (url === 'https://covid-api.com/api/regions?per_page=1000') {
-      regions = data.data.map(region => region.name)
-      console.log(data)
-    }
+  if (toggle === false) {
+    regions = data.data.map(region => region.name)
+    dataSaver = data.data
+    toggle = true
+    console.log(regions)
+  }
+  console.log(regions)
 
   return (
     <div className={styles.dropdown}>
@@ -34,9 +34,10 @@ export default function Dropdown(props) {
             onClick={() => {
                 setSelected(regionName)
                 setOpen(false)
-                iso = data.data[index -1].iso
+                iso = dataSaver[index -1].iso
                 url = `https://covid-api.com/api/reports/total?date=${year}-${month}-${day}&iso=${iso}`
-                console.log(url) 
+                console.log(url)
+                console.log(iso) 
                 }} >
                 {regionName}
             </div>
