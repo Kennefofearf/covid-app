@@ -1,7 +1,5 @@
 import React from 'react'
 import styles from './dropdown.module.css'
-import Navbar from './Navbar'
-import { setOpen } from './Navbar'
 
 const date = new Date()
 let year = date.getFullYear()
@@ -29,7 +27,7 @@ export default function Dropdown(props) {
 
   return (
     <div className={styles.dropdown}>
-        {['Global', ...regions].map((regionName, index) => {
+        {['Global',...regions].map((regionName, index) => {
             return <div key={index} className={styles.dropdownItem}
             onClick={() => {
                 setSelected(regionName)
