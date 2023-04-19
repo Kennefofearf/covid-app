@@ -24,27 +24,4 @@ export function useFetchData(url) {
   return {data, loading, error}
 }
 
-// export function useNewFetchData(url) {
-//     const [newData, setNewData] = useState(null)
-//     const [newLoading, setNewLoading] = useState(true)
-//     const [newError, setNewError] = useState(null)
-
-//     useEffect(() => {
-//         setNewLoading(true)
-//         function fetch() {
-//             try {
-//                 const {newData} = axios.get(url)
-//                 setNewData(newData)
-//             } catch (err) {
-//                 setNewError(err.message)
-//             } finally {
-//                 setNewLoading(false)
-//             }
-//         }
-//         fetch()
-//     }, [url])
-
-//   return {newData, newLoading, newError}
-// }
-
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import { useFetchData } from '../hooks/fetchData'
 import { Bar } from 'react-chartjs-2'
 import "chart.js/auto"
 
@@ -10,7 +9,7 @@ export default function Main(props) {
         return <div>
             Globobble
         </div>
-    } else if (selected != 'Global') {
+    } else if (selected !== 'Global') {
       var deaths = data.data.deaths
       var confirmed = data.data.confirmed
     }
