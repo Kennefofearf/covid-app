@@ -7,7 +7,7 @@ export default function Main(props) {
 
     if (selected === 'Global') {
         return <div>
-            Globobble
+            Click the dropdown and select a country to view Covid-19 cases vs deaths.
         </div>
     } else if (selected !== 'Global') {
       var deaths = data.data.deaths
