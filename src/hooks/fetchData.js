@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+
 export function useFetchData(url) {
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(true)
