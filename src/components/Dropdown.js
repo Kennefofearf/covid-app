@@ -17,6 +17,8 @@ var dataSaver
 export default function Dropdown(props) {
     const { data, setSelected, setOpen } = props
 
+    /* Stores initial data fetch to a variable once */
+    
   if (toggle === false) {
     regions = data.data.map(region => region.name)
     dataSaver = data.data
