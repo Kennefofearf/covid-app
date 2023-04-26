@@ -11,6 +11,8 @@ export default function Navbar(props) {
     error
   } = props
 
+  /* Catches an error if there is one */
+
   if (error) {
     return <div>
       ERROR
