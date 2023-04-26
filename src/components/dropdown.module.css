@@ -12,5 +12,5 @@
 
 .dropdownItem:hover {
     transform: translateX(10px);
-    color: turquoise;
+    color: red;
 }
