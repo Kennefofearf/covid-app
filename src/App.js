@@ -9,6 +9,8 @@ import { url } from "./components/Dropdown";
 function App() {
   const [selected, setSelected] = useState('Global')
   const [open, setOpen] = useState(false)
+
+  // Assigning data fetch variables
   const { data, loading, error } = useFetchData(url)
   
   return (
