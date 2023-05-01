@@ -17,6 +17,8 @@ export default function Main(props) {
     <div className='Main'>
     <div style={{ maxWidth: "650px" }}>
 
+{/* Creates a bar graph to display the data */}
+
         <Bar
           data={{
             // Name of the variables on x-axies for each bar
