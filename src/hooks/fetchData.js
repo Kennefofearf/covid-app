@@ -6,6 +6,8 @@ export function useFetchData(url) {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
+    /* Fetch data as a background process. */
+
     useEffect(() => {
         setLoading(true)
         async function fetch() {
