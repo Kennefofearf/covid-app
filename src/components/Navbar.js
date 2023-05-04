@@ -23,6 +23,9 @@ export default function Navbar(props) {
     <div className={styles.navbar} onClick={() => setOpen(!open)}>
       {console.log(url)}
       {loading ?
+
+        /* Displays as "loading" while data is fetched */
+
       <div>Loading</div> :
       <div className={styles.subText}>{selected}</div>
       }
