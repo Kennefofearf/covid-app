@@ -6,6 +6,8 @@ The data that this app uses is COVID-19 cases vs deaths for many countries aroun
 
 The API used for the webpage is found here: https://covid-api.com/api/
 
+The live link is here: https://covid-app-peach.vercel.app/
+
 Edit: The API is no longer supported and will show data from March 10, 2023.
 
 # Development
@@ -28,7 +30,7 @@ Due to the way this API is structured, two different URLs had to be used to fetc
 
 # How to use
 
-At the time of this messgae the API is no longer being supported with new data. However the data fetches will still work after a couple steps are taken.
+At the time of this message the API is no longer being supported with new data. However the data fetches will still work after a couple steps are taken.
 
 1. Allow CORS
 
@@ -44,4 +46,4 @@ At the time of this messgae the API is no longer being supported with new data. 
 
     Once there you will see a security warning. Click "Advanced" followed by "Proceed to ____" to enable the cerificate.
 
-From here reload the page and it will start displaying countries and covid cases, and covid deaths.
+The live link is here: https://covid-app-peach.vercel.app/
