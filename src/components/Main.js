@@ -9,6 +9,7 @@ export default function Main(props) {
         return <div>
             Click the dropdown and select a country to view Covid-19 cases vs deaths.
         </div>
+        /* When the country selection is not Global: display confirmed and deaths */
     } else if (selected !== 'Global') {
       var deaths = data.data.deaths
       var confirmed = data.data.confirmed
