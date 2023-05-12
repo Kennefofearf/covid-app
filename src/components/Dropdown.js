@@ -35,7 +35,7 @@ export default function Dropdown(props) {
                 setSelected(regionName)
                 setOpen(false)
                 iso = dataSaver[index -1].iso
-                url = `https://covid-api.com/api/reports/total?date=${year}-${month}-${day}&iso=${iso}`
+                url = `https://covid-api.com/api/reports/total?date=2023-03-09&iso=${iso}`
                 console.log(url)
                 console.log(iso) 
                 }} >
