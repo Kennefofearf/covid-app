@@ -30,7 +30,7 @@ export default function Main(props) {
             datasets: [
               {
                 // Label for bars
-                label: `Cases for ${selected}`,
+                label: `Cases for ${selected} as of 03/09/2023`,
                 // Data or value of your each variable
                 data: [confirmed, deaths],
                 // Color of each bar
