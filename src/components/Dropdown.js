@@ -1,13 +1,6 @@
 import React from 'react'
 import styles from './dropdown.module.css'
 
-const date = new Date()
-let year = date.getFullYear()
-let month = ('0' + (date.getMonth() + 1 - 2)).slice(-2)
-var day = ('0' + (date.getDate())).slice(-2)
-  if (month === '02' && day > 28) {
-      day = 28
-  }
 export var url = 'https://covid-api.com/api/regions?per_page=1000'
 export var iso
 var regions
@@ -23,9 +16,7 @@ export default function Dropdown(props) {
     regions = data.data.map(region => region.name)
     dataSaver = data.data
     toggle = true
-    console.log(regions)
   }
-  console.log(regions)
 
   return (
     <div className={styles.dropdown}>
