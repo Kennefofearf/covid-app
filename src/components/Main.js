@@ -5,6 +5,8 @@ import "chart.js/auto"
 export default function Main(props) {
     var { selected, data } = props
 
+    /* When selected is equal to global. Display the default text. */
+
     if (selected === 'Global') {
         return <div>
             Click on "GLOBAL" above and then select a country. 
